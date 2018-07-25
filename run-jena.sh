@@ -1,10 +1,57 @@
 #!/usr/bin/env bash
 
-if ! [[ $2 ]] ; then
-    FOLDER="*"
-else
-    FOLDER="$2"
-fi
+hashxml() {
+  sed '/^<sparql/{$!{:m;s/>/END/;te;N;bm;:e;s/^<sparql.*END/<sparql>/g}}' $1 > $2
+  cat $2 > _temp
+  xsltproc -o _temp scripts/hasher.xslt $2
+  sort _temp > $2
+}
+
+compare() {
+  groundTruth=`wc -l $1 | sed 's/^[ ^t]*//' | cut -d' ' -f1`
+  commons=`comm -12 $2 $1 | wc -l`
+  comparison=`echo "scale=2; $commons/$groundTruth" | bc`
+  echo -n "$comparison;"
+}
+
+log() {
+  if [[ $verbose ]] && [[ $completeness != 1.00 || $soundness != 1.00 ]]; then
+      echo ""
+      cat tempRef
+      cat tempRes
+  fi
+}
+
+usage() {
+  echo "Usage: $0 [-v] [-f <name of folder to parse || *>] [-j <jena use path>] [-g <sage-jena use path>] [-s <sage js use path>]" 1>&2;
+  exit 1;
+}
+
+FOLDER="*"
+
+while getopts ":f:j:g:s:v" o; do
+    case "${o}" in
+        f)
+          FOLDER=${OPTARG}
+          ;;
+        j)
+          jenapath=${OPTARG}
+          ;;
+        g)
+          sagejenapath=${OPTARG}
+          ;;
+        s)
+          sagejspath=${OPTARG}
+          ;;
+        v)
+          verbose=1
+          ;;
+        *)
+          usage
+          ;;
+    esac
+done
+shift $((OPTIND-1))
 
 for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
     WAY="${MANIFEST%/*.ttl}"
@@ -53,43 +100,72 @@ for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
                 EXPECT="${EXPECT%>*}"
                 EXPECT="${EXPECT#*<}"
 
-                # setting up a destination for results of the execution and
-                # creating any necessary path to it
-                DEST=results/$DIR
-                mkdir -p $DEST/
-
-                JENACOM="/home/runner/Documents/M1_ALMA/Stage/SaGe/jena/sage-jena/build/distributions/sage-jena-1.0-SNAPSHOT/bin/sage-jena"
-                `$JENACOM -u "http://localhost:8000/sparql/$DIR$ADATA" -q "$QUERY" 1> $DEST/res.$NAME.xml`
-
                 if [[ $EXPECT = *".srx"* ]]; then
                     reference=$WAY/$EXPECT
-                    results=$DEST/res.$NAME.xml
+                    hashxml "$reference" "tempRef"
 
-                    #reference setup
-                    sed '/^<sparql/{$!{:m;s/>/END/;te;N;bm;:e;s/^<sparql.*END/<sparql>/g}}' $reference > tempRef
-                    cat tempRef > _tempRef
-                    xsltproc -o _tempRef scripts/hasher.xslt tempRef
-                    sort _tempRef > tempRef
+                    # for every kind of query engine supplied
+                    # set the destination to store query results
+                    # generate, format and compare
+                    # log accordingly
+                    if [[ $jenapath ]]; then
+                      DEST=results/jena/$DIR
+                      mkdir -p $DEST/
 
-                    #result setup
-                    sed '/^<sparql/{$!{:m;s/>/END/;te;N;bm;:e;s/^<sparql.*END/<sparql>/g}}' $results > tempRes
-                    cat tempRes > _tempRes
-                    xsltproc -o _tempRes scripts/hasher.xslt tempRes
-                    sort _tempRes > tempRes
+                      `$sagejenapath -u "http://localhost:8000/sparql/$DIR$ADATA" -q "$QUERY" 1> $DEST/res.$NAME.xml`
 
-                    #soundness
-                    groundTruth=`wc -l tempRes | sed 's/^[ ^t]*//' | cut -d' ' -f1`
-                    commons=`comm -12 tempRef tempRes | wc -l`
-                    soundness=`echo "scale=2; $commons/$groundTruth" | bc`
-                    echo -n "$soundness;"
+                      results=$DEST/res.$NAME.xml
+                      hashxml "$results" "tempRes"
 
-                    #completeness
-                    groundTruth=`wc -l tempRef | sed 's/^[ ^t]*//' | cut -d' ' -f1`
-                    commons=`comm -12 tempRef tempRes | wc -l`
-                    completeness=`echo "scale=2; $commons/$groundTruth" | bc`
-                    echo -n "$completeness;"
+                      # soundness
+                      compare tempRes tempRef
+                      soundness=$comparison
+                      # completeness
+                      compare tempRef tempRes
+                      completeness=$comparison
 
-                    rm -f tempRef tempRes _tempRef _tempRes
+                      log
+                    fi
+
+                    if [[ $sagejenapath ]]; then
+                      DEST=results/sagejena/$DIR
+                      mkdir -p $DEST/
+
+                      `$sagejenapath -u "http://localhost:8000/sparql/$DIR$ADATA" -q "$QUERY" 1> $DEST/res.$NAME.xml`
+
+                      results=$DEST/res.$NAME.xml
+                      hashxml "$results" "tempRes"
+
+                      # soundness
+                      compare tempRes tempRef
+                      soundness=$comparison
+                      # completeness
+                      compare tempRef tempRes
+                      completeness=$comparison
+
+                      log
+                    fi
+
+                    if [[ $sagejspath ]]; then
+                      DEST=results/sagejs/$DIR
+                      mkdir -p $DEST/
+
+                      `$sagejenapath -u "http://localhost:8000/sparql/$DIR$ADATA" -q "$QUERY" 1> $DEST/res.$NAME.xml`
+
+                      results=$DEST/res.$NAME.xml
+                      hashxml "$results" "tempRes"
+
+                      # soundness
+                      compare tempRes tempRef
+                      soundness=$comparison
+                      # completeness
+                      compare tempRef tempRes
+                      completeness=$comparison
+
+                      log
+                    fi
+
+                    rm -f tempRef tempRes _temp
                 fi
             fi
             echo ""
