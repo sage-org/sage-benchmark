@@ -1,4 +1,4 @@
-PREFIX : <http://example.org/> 
+PREFIX : <http://example.org/>
 
 SELECT *
 {

@@ -2,8 +2,7 @@
 
 hashxml() {
   sed '/^<sparql/{$!{:m;s/>/END/;te;N;bm;:e;s/^<sparql.*END/<sparql>/g}}' $1 > $2
-  cat $2 > _temp
-  xsltproc -o _temp scripts/hasher.xslt $2
+  xsltproc -o _temp tools/hasher.xslt $2
   sort _temp > $2
 }
 
@@ -112,10 +111,40 @@ for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
                       DEST=results/jena/$DIR
                       mkdir -p $DEST/
 
-                      `$sagejenapath -u "http://localhost:8000/sparql/$DIR$ADATA" -q "$QUERY" 1> $DEST/res.$NAME.xml`
+                      iwantmeback=`pwd`
+                      jenafolder="${jenapath%bin*.sh}"
 
-                      results=$DEST/res.$NAME.xml
-                      hashxml "$results" "tempRes"
+                      cd $jenafolder
+
+                      `$jenapath $iwantmeback/data/w3c/$DIR/$ADATA.hdt "$QUERY" 1> $iwantmeback/$DEST/res.$NAME.hashed`
+
+                      cd $iwantmeback
+
+                      results=$DEST/res.$NAME.hashed
+
+                      # '/^<sparql/{$!{:m;s/>/END/;te;N;bm;:e;s/^<sparql.*END/<sparql>/g}}'
+                      #'/^\[INFO\]/{$!{:m;N;s/\[INFO\].*/END/;tm;s/[END]*/ /g}}'
+                      # '/^\[INFO\]/{$!{:m;N;s/\[INFO\]/a/;tm;s/*/ /g}}'
+                      # 's/\[INFO\].*/ /g'
+
+                      sed '/^\[INFO\]/{$!{:m;N;s/.*\[INFO\].*/ /;tm;N;s/.*\n//g}}' $results > _temp
+                      sed 's/^ //' _temp > tempRes
+                      sed 's/,//g' tempRes > _temp
+                      sed -e 's/\r//g' _temp > tempRes
+                      sed 's/""//g' tempRes > _temp
+                      cat _temp > tempRes
+
+                      exec 5<> $results
+                          while read -r ISITBOOLEAN; do
+                              if [ "$ISITBOOLEAN" == "true" ] || [ "$ISITBOOLEAN" == "false" ] ; then
+                                echo "$ISITBOOLEAN" > tempRes
+                              fi
+                          done <&5
+                      exec 5>&-
+
+                      echo '<?xml version="1.0"?>' >> tempRes
+                      sort tempRes > _temp
+                      cat _temp > tempRes
 
                       # soundness
                       compare tempRes tempRef
@@ -123,6 +152,8 @@ for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
                       # completeness
                       compare tempRef tempRes
                       completeness=$comparison
+
+                      diff tempRef tempRes > damn.txt
 
                       log
                     fi
@@ -147,10 +178,11 @@ for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
                     fi
 
                     if [[ $sagejspath ]]; then
+                      # ./../SaGe/sage-client/bin/sage-client.js -t xml http://localhost:8000/sparql/functionsdata -f w3c/functions/strlang02.rq
                       DEST=results/sagejs/$DIR
                       mkdir -p $DEST/
 
-                      `$sagejenapath -u "http://localhost:8000/sparql/$DIR$ADATA" -q "$QUERY" 1> $DEST/res.$NAME.xml`
+                      `node $sagejspath -t xml http://localhost:8000/sparql/$DIR$ADATA -q "$QUERY" 1> $DEST/res.$NAME.xml`
 
                       results=$DEST/res.$NAME.xml
                       hashxml "$results" "tempRes"

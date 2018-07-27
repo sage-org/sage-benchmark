@@ -7,3 +7,4 @@ SELECT *
 WHERE
 {?X :p _:a.
  _:a :r ?Y.}
+ 
