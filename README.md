@@ -11,10 +11,10 @@ apt-get install xsltproc
 ```
 
 # Installation
-* this benchmark is compatible with the following query engines:
-[jena-hdt](https://github.com/rdfhdt/hdt-java/tree/master/hdt-jena)
-[sage-jena](https://github.com/Callidon/sage-jena)
-[sage-client](https://github.com/Callidon/sage-client)
+this benchmark is compatible with the following query engines:
+* [jena-hdt](https://github.com/rdfhdt/hdt-java/tree/master/hdt-jena)
+* [sage-jena](https://github.com/Callidon/sage-jena)
+* [sage-client](https://github.com/Callidon/sage-client)
 
 follow the installation instructions of the ones you require for testing.
 
