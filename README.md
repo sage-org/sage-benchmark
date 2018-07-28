@@ -32,16 +32,13 @@ You could also run the sage-engine without using the docker image, and if you do
 When in this project folder, you can directly run `run-any.sh`.
 
 `run-any.sh` takes the path to the script(s) of the query engine you wish to use:
-
+```
 | engine        | script name    |
-
 | ------------- | -------------- |
-
 | jena-hdt      | hdtsparql.sh   |
-
 | sage-jena     | sage-jena      |
-
 | sage-js       | sage-client.js |
+```
 
 * Options
 
@@ -55,6 +52,7 @@ bash run-any.sh
 ```
 
 `run-any` will always output csv format as follows: `queryname;soundness;completeness`
+additionally, it will alway output the results for jena, sage-jena and sage-js, in that specific order, regardless of the order of the options you passed to it.
 
 # disclaimer
 Some queries are removed from the benchmark, because they either have a format that is not  handled by the testing process properly yet (json/csv responses)
