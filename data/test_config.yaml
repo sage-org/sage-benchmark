@@ -1,0 +1,1040 @@
+name: SaGe Test server
+maintainer: Thomas Minier <thomas.minier@univ-nantes.fr>
+quota: 75
+maxResults: 500
+datasets:
+-
+  name: addadd-01-post
+  description: add-01-post
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-01-post.hdt
+-
+  name: addadd-01-pre
+  description: add-01-pre
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-01-pre.hdt
+-
+  name: addadd-02-post
+  description: add-02-post
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-02-post.hdt
+-
+  name: addadd-02-pre
+  description: add-02-pre
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-02-pre.hdt
+-
+  name: addadd-03-post
+  description: add-03-post
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-03-post.hdt
+-
+  name: addadd-03-pre
+  description: add-03-pre
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-03-pre.hdt
+-
+  name: addadd-default
+  description: add-default
+  backend: hdt-file
+  file: /opt/data/w3c/add/add-default.hdt
+-
+  name: aggregatesagg01
+  description: agg01
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg01.hdt
+-
+  name: aggregatesagg08
+  description: agg08
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg08.hdt
+-
+  name: aggregatesagg-err-01
+  description: agg-err-01
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg-err-01.hdt
+-
+  name: aggregatesagg-err-02
+  description: agg-err-02
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg-err-02.hdt
+-
+  name: aggregatesagg-groupconcat-1
+  description: agg-groupconcat-1
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg-groupconcat-1.hdt
+-
+  name: aggregatesagg-numeric2
+  description: agg-numeric2
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg-numeric2.hdt
+-
+  name: aggregatesagg-numeric
+  description: agg-numeric
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/agg-numeric.hdt
+-
+  name: aggregatesempty
+  description: empty
+  backend: hdt-file
+  file: /opt/data/w3c/aggregates/empty.hdt
+-
+  name: basic-updateempty
+  description: empty
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/empty.hdt
+-
+  name: basic-updateinsert-01-post
+  description: insert-01-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-01-post.hdt
+-
+  name: basic-updateinsert-01-pre
+  description: insert-01-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-01-pre.hdt
+-
+  name: basic-updateinsert-02-g1-post
+  description: insert-02-g1-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-02-g1-post.hdt
+-
+  name: basic-updateinsert-02-post
+  description: insert-02-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-02-post.hdt
+-
+  name: basic-updateinsert-02-pre
+  description: insert-02-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-02-pre.hdt
+-
+  name: basic-updateinsert-03-g1-post
+  description: insert-03-g1-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-03-g1-post.hdt
+-
+  name: basic-updateinsert-03-g1-pre
+  description: insert-03-g1-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-03-g1-pre.hdt
+-
+  name: basic-updateinsert-03-post
+  description: insert-03-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-03-post.hdt
+-
+  name: basic-updateinsert-03-pre
+  description: insert-03-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-03-pre.hdt
+-
+  name: basic-updateinsert-04-g1-post
+  description: insert-04-g1-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-04-g1-post.hdt
+-
+  name: basic-updateinsert-04-g1-pre
+  description: insert-04-g1-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-04-g1-pre.hdt
+-
+  name: basic-updateinsert-04-post
+  description: insert-04-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-04-post.hdt
+-
+  name: basic-updateinsert-04-pre
+  description: insert-04-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-04-pre.hdt
+-
+  name: basic-updateinsert-05a-g1-pre
+  description: insert-05a-g1-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-05a-g1-pre.hdt
+-
+  name: basic-updateinsert-05a-g3-post
+  description: insert-05a-g3-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-05a-g3-post.hdt
+-
+  name: basic-updateinsert-05-g1-pre
+  description: insert-05-g1-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-05-g1-pre.hdt
+-
+  name: basic-updateinsert-using-01-g1-post
+  description: insert-using-01-g1-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-using-01-g1-post.hdt
+-
+  name: basic-updateinsert-using-01-g1-pre
+  description: insert-using-01-g1-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-using-01-g1-pre.hdt
+-
+  name: basic-updateinsert-using-01-g2-post
+  description: insert-using-01-g2-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-using-01-g2-post.hdt
+-
+  name: basic-updateinsert-using-01-g2-pre
+  description: insert-using-01-g2-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-using-01-g2-pre.hdt
+-
+  name: basic-updateinsert-using-01-post
+  description: insert-using-01-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-using-01-post.hdt
+-
+  name: basic-updateinsert-using-01-pre
+  description: insert-using-01-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-using-01-pre.hdt
+-
+  name: basic-updateinsert-where-same-bnode-g3-post
+  description: insert-where-same-bnode-g3-post
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-where-same-bnode-g3-post.hdt
+-
+  name: basic-updateinsert-where-same-bnode-pre
+  description: insert-where-same-bnode-pre
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/insert-where-same-bnode-pre.hdt
+-
+  name: basic-updatespo2
+  description: spo2
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/spo2.hdt
+-
+  name: basic-updatespo
+  description: spo
+  backend: hdt-file
+  file: /opt/data/w3c/basic-update/spo.hdt
+-
+  name: binddata
+  description: data
+  backend: hdt-file
+  file: /opt/data/w3c/bind/data.hdt
+-
+  name: bindingsdata01
+  description: data01
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data01.hdt
+-
+  name: bindingsdata02
+  description: data02
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data02.hdt
+-
+  name: bindingsdata03
+  description: data03
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data03.hdt
+-
+  name: bindingsdata04
+  description: data04
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data04.hdt
+-
+  name: bindingsdata05
+  description: data05
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data05.hdt
+-
+  name: bindingsdata06
+  description: data06
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data06.hdt
+-
+  name: bindingsdata07
+  description: data07
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data07.hdt
+-
+  name: bindingsdata08
+  description: data08
+  backend: hdt-file
+  file: /opt/data/w3c/bindings/data08.hdt
+-
+  name: clearclear-g1
+  description: clear-g1
+  backend: hdt-file
+  file: /opt/data/w3c/clear/clear-g1.hdt
+-
+  name: clearclear-g2
+  description: clear-g2
+  backend: hdt-file
+  file: /opt/data/w3c/clear/clear-g2.hdt
+-
+  name: clearempty
+  description: empty
+  backend: hdt-file
+  file: /opt/data/w3c/clear/empty.hdt
+-
+  name: constructconstructwhere01result
+  description: constructwhere01result
+  backend: hdt-file
+  file: /opt/data/w3c/construct/constructwhere01result.hdt
+-
+  name: constructconstructwhere02result
+  description: constructwhere02result
+  backend: hdt-file
+  file: /opt/data/w3c/construct/constructwhere02result.hdt
+-
+  name: constructconstructwhere03result
+  description: constructwhere03result
+  backend: hdt-file
+  file: /opt/data/w3c/construct/constructwhere03result.hdt
+-
+  name: constructconstructwhere04result
+  description: constructwhere04result
+  backend: hdt-file
+  file: /opt/data/w3c/construct/constructwhere04result.hdt
+-
+  name: constructdata
+  description: data
+  backend: hdt-file
+  file: /opt/data/w3c/construct/data.hdt
+-
+  name: copycopy-01
+  description: copy-01
+  backend: hdt-file
+  file: /opt/data/w3c/copy/copy-01.hdt
+-
+  name: copycopy-02
+  description: copy-02
+  backend: hdt-file
+  file: /opt/data/w3c/copy/copy-02.hdt
+-
+  name: copycopy-default
+  description: copy-default
+  backend: hdt-file
+  file: /opt/data/w3c/copy/copy-default.hdt
+-
+  name: csv-tsv-resdata2
+  description: data2
+  backend: hdt-file
+  file: /opt/data/w3c/csv-tsv-res/data2.hdt
+-
+  name: csv-tsv-resdata
+  description: data
+  backend: hdt-file
+  file: /opt/data/w3c/csv-tsv-res/data.hdt
+-
+  name: delete-datadelete-post-01f
+  description: delete-post-01f
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-post-01f.hdt
+-
+  name: delete-datadelete-post-01s
+  description: delete-post-01s
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-post-01s.hdt
+-
+  name: delete-datadelete-post-02f
+  description: delete-post-02f
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-post-02f.hdt
+-
+  name: delete-datadelete-post-02s
+  description: delete-post-02s
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-post-02s.hdt
+-
+  name: delete-datadelete-post-03f
+  description: delete-post-03f
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-post-03f.hdt
+-
+  name: delete-datadelete-pre-01
+  description: delete-pre-01
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-pre-01.hdt
+-
+  name: delete-datadelete-pre-02
+  description: delete-pre-02
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-pre-02.hdt
+-
+  name: delete-datadelete-pre-03
+  description: delete-pre-03
+  backend: hdt-file
+  file: /opt/data/w3c/delete-data/delete-pre-03.hdt
+-
+  name: deletedelete-post-01f
+  description: delete-post-01f
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-post-01f.hdt
+-
+  name: deletedelete-post-01s2
+  description: delete-post-01s2
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-post-01s2.hdt
+-
+  name: deletedelete-post-01s
+  description: delete-post-01s
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-post-01s.hdt
+-
+  name: deletedelete-post-02f
+  description: delete-post-02f
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-post-02f.hdt
+-
+  name: deletedelete-post-02s
+  description: delete-post-02s
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-post-02s.hdt
+-
+  name: deletedelete-post-03f
+  description: delete-post-03f
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-post-03f.hdt
+-
+  name: deletedelete-pre-01
+  description: delete-pre-01
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-pre-01.hdt
+-
+  name: deletedelete-pre-02
+  description: delete-pre-02
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-pre-02.hdt
+-
+  name: deletedelete-pre-03
+  description: delete-pre-03
+  backend: hdt-file
+  file: /opt/data/w3c/delete/delete-pre-03.hdt
+-
+  name: delete-insertdelete-insert-post-01b
+  description: delete-insert-post-01b
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-01b.hdt
+-
+  name: delete-insertdelete-insert-post-01
+  description: delete-insert-post-01
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-01.hdt
+-
+  name: delete-insertdelete-insert-post-02
+  description: delete-insert-post-02
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-02.hdt
+-
+  name: delete-insertdelete-insert-post-05
+  description: delete-insert-post-05
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-05.hdt
+-
+  name: delete-insertdelete-insert-post-07b
+  description: delete-insert-post-07b
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-07b.hdt
+-
+  name: delete-insertdelete-insert-post-07
+  description: delete-insert-post-07
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-07.hdt
+-
+  name: delete-insertdelete-insert-post-08
+  description: delete-insert-post-08
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-08.hdt
+-
+  name: delete-insertdelete-insert-post-09
+  description: delete-insert-post-09
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-post-09.hdt
+-
+  name: delete-insertdelete-insert-pre-01
+  description: delete-insert-pre-01
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-pre-01.hdt
+-
+  name: delete-insertdelete-insert-pre-06
+  description: delete-insert-pre-06
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-pre-06.hdt
+-
+  name: delete-insertdelete-insert-pre-08
+  description: delete-insert-pre-08
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-pre-08.hdt
+-
+  name: delete-insertdelete-insert-pre-09
+  description: delete-insert-pre-09
+  backend: hdt-file
+  file: /opt/data/w3c/delete-insert/delete-insert-pre-09.hdt
+-
+  name: delete-wheredelete-post-01f
+  description: delete-post-01f
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-post-01f.hdt
+-
+  name: delete-wheredelete-post-01s
+  description: delete-post-01s
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-post-01s.hdt
+-
+  name: delete-wheredelete-post-02f
+  description: delete-post-02f
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-post-02f.hdt
+-
+  name: delete-wheredelete-post-02s
+  description: delete-post-02s
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-post-02s.hdt
+-
+  name: delete-wheredelete-post-03f
+  description: delete-post-03f
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-post-03f.hdt
+-
+  name: delete-wheredelete-pre-01
+  description: delete-pre-01
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-pre-01.hdt
+-
+  name: delete-wheredelete-pre-02
+  description: delete-pre-02
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-pre-02.hdt
+-
+  name: delete-wheredelete-pre-03
+  description: delete-pre-03
+  backend: hdt-file
+  file: /opt/data/w3c/delete-where/delete-pre-03.hdt
+-
+  name: dropdrop-g1
+  description: drop-g1
+  backend: hdt-file
+  file: /opt/data/w3c/drop/drop-g1.hdt
+-
+  name: dropdrop-g2
+  description: drop-g2
+  backend: hdt-file
+  file: /opt/data/w3c/drop/drop-g2.hdt
+-
+  name: entailmentbind-data
+  description: bind-data
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/bind-data.hdt
+-
+  name: entailmentdata-01
+  description: data-01
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-01.hdt
+-
+  name: entailmentdata-02
+  description: data-02
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-02.hdt
+-
+  name: entailmentdata-03
+  description: data-03
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-03.hdt
+-
+  name: entailmentdata-06
+  description: data-06
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-06.hdt
+-
+  name: entailmentdata-07
+  description: data-07
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-07.hdt
+-
+  name: entailmentdata-08
+  description: data-08
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-08.hdt
+-
+  name: entailmentdata-11
+  description: data-11
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/data-11.hdt
+-
+  name: entailmentd-ent-01
+  description: d-ent-01
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/d-ent-01.hdt
+-
+  name: entailmentlang
+  description: lang
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/lang.hdt
+-
+  name: entailmentowlds01
+  description: owlds01
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/owlds01.hdt
+-
+  name: entailmentowlds02
+  description: owlds02
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/owlds02.hdt
+-
+  name: entailmentpaper-sparqldl-data
+  description: paper-sparqldl-data
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/paper-sparqldl-data.hdt
+-
+  name: entailmentparent
+  description: parent
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/parent.hdt
+-
+  name: entailmentplainLit
+  description: plainLit
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/plainLit.hdt
+-
+  name: entailmentrdf01
+  description: rdf01
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdf01.hdt
+-
+  name: entailmentrdf02
+  description: rdf02
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdf02.hdt
+-
+  name: entailmentrdf03
+  description: rdf03
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdf03.hdt
+-
+  name: entailmentrdf04
+  description: rdf04
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdf04.hdt
+-
+  name: entailmentrdfs01
+  description: rdfs01
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs01.hdt
+-
+  name: entailmentrdfs03
+  description: rdfs03
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs03.hdt
+-
+  name: entailmentrdfs04
+  description: rdfs04
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs04.hdt
+-
+  name: entailmentrdfs05
+  description: rdfs05
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs05.hdt
+-
+  name: entailmentrdfs06
+  description: rdfs06
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs06.hdt
+-
+  name: entailmentrdfs07
+  description: rdfs07
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs07.hdt
+-
+  name: entailmentrdfs08
+  description: rdfs08
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs08.hdt
+-
+  name: entailmentrdfs09
+  description: rdfs09
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs09.hdt
+-
+  name: entailmentrdfs10
+  description: rdfs10
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs10.hdt
+-
+  name: entailmentrdfs11
+  description: rdfs11
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs11.hdt
+-
+  name: entailmentrdfs12
+  description: rdfs12
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs12.hdt
+-
+  name: entailmentrdfs13
+  description: rdfs13
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/rdfs13.hdt
+-
+  name: entailmentsimple
+  description: simple
+  backend: hdt-file
+  file: /opt/data/w3c/entailment/simple.hdt
+-
+  name: existsexists01
+  description: exists01
+  backend: hdt-file
+  file: /opt/data/w3c/exists/exists01.hdt
+-
+  name: existsexists02
+  description: exists02
+  backend: hdt-file
+  file: /opt/data/w3c/exists/exists02.hdt
+-
+  name: functionsdata2
+  description: data2
+  backend: hdt-file
+  file: /opt/data/w3c/functions/data2.hdt
+-
+  name: functionsdata3
+  description: data3
+  backend: hdt-file
+  file: /opt/data/w3c/functions/data3.hdt
+-
+  name: functionsdata4
+  description: data4
+  backend: hdt-file
+  file: /opt/data/w3c/functions/data4.hdt
+-
+  name: functionsdata-builtin-3
+  description: data-builtin-3
+  backend: hdt-file
+  file: /opt/data/w3c/functions/data-builtin-3.hdt
+-
+  name: functionsdata-coalesce
+  description: data-coalesce
+  backend: hdt-file
+  file: /opt/data/w3c/functions/data-coalesce.hdt
+-
+  name: functionsdata
+  description: data
+  backend: hdt-file
+  file: /opt/data/w3c/functions/data.hdt
+-
+  name: functionshash-unicode
+  description: hash-unicode
+  backend: hdt-file
+  file: /opt/data/w3c/functions/hash-unicode.hdt
+-
+  name: groupinggroup-data-1
+  description: group-data-1
+  backend: hdt-file
+  file: /opt/data/w3c/grouping/group-data-1.hdt
+-
+  name: groupinggroup-data-2
+  description: group-data-2
+  backend: hdt-file
+  file: /opt/data/w3c/grouping/group-data-2.hdt
+-
+  name: json-resdata
+  description: data
+  backend: hdt-file
+  file: /opt/data/w3c/json-res/data.hdt
+-
+  name: movemove-01
+  description: move-01
+  backend: hdt-file
+  file: /opt/data/w3c/move/move-01.hdt
+-
+  name: movemove-02
+  description: move-02
+  backend: hdt-file
+  file: /opt/data/w3c/move/move-02.hdt
+-
+  name: movemove-default
+  description: move-default
+  backend: hdt-file
+  file: /opt/data/w3c/move/move-default.hdt
+-
+  name: negationfull-minuend
+  description: full-minuend
+  backend: hdt-file
+  file: /opt/data/w3c/negation/full-minuend.hdt
+-
+  name: negationpart-minuend
+  description: part-minuend
+  backend: hdt-file
+  file: /opt/data/w3c/negation/part-minuend.hdt
+-
+  name: negationset-data
+  description: set-data
+  backend: hdt-file
+  file: /opt/data/w3c/negation/set-data.hdt
+-
+  name: negationsubsetByExcl
+  description: subsetByExcl
+  backend: hdt-file
+  file: /opt/data/w3c/negation/subsetByExcl.hdt
+-
+  name: negationtemporalProximity01
+  description: temporalProximity01
+  backend: hdt-file
+  file: /opt/data/w3c/negation/temporalProximity01.hdt
+-
+  name: project-expressionprojexp01
+  description: projexp01
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp01.hdt
+-
+  name: project-expressionprojexp02
+  description: projexp02
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp02.hdt
+-
+  name: project-expressionprojexp03
+  description: projexp03
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp03.hdt
+-
+  name: project-expressionprojexp04
+  description: projexp04
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp04.hdt
+-
+  name: project-expressionprojexp05
+  description: projexp05
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp05.hdt
+-
+  name: project-expressionprojexp06
+  description: projexp06
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp06.hdt
+-
+  name: project-expressionprojexp07
+  description: projexp07
+  backend: hdt-file
+  file: /opt/data/w3c/project-expression/projexp07.hdt
+-
+  name: property-pathclique3
+  description: clique3
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/clique3.hdt
+-
+  name: property-pathdata-diamond
+  description: data-diamond
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/data-diamond.hdt
+-
+  name: property-pathdata-diamond-loop
+  description: data-diamond-loop
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/data-diamond-loop.hdt
+-
+  name: property-pathdata-diamond-tail
+  description: data-diamond-tail
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/data-diamond-tail.hdt
+-
+  name: property-pathempty
+  description: empty
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/empty.hdt
+-
+  name: property-pathng-01
+  description: ng-01
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/ng-01.hdt
+-
+  name: property-pathng-02
+  description: ng-02
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/ng-02.hdt
+-
+  name: property-pathng-03
+  description: ng-03
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/ng-03.hdt
+-
+  name: property-pathpath-p1
+  description: path-p1
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/path-p1.hdt
+-
+  name: property-pathpath-p3
+  description: path-p3
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/path-p3.hdt
+-
+  name: property-pathpp01
+  description: pp01
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp01.hdt
+-
+  name: property-pathpp03
+  description: pp03
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp03.hdt
+-
+  name: property-pathpp05
+  description: pp05
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp05.hdt
+-
+  name: property-pathpp061
+  description: pp061
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp061.hdt
+-
+  name: property-pathpp062
+  description: pp062
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp062.hdt
+-
+  name: property-pathpp07
+  description: pp07
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp07.hdt
+-
+  name: property-pathpp08
+  description: pp08
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp08.hdt
+-
+  name: property-pathpp09
+  description: pp09
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp09.hdt
+-
+  name: property-pathpp10
+  description: pp10
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp10.hdt
+-
+  name: property-pathpp11
+  description: pp11
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp11.hdt
+-
+  name: property-pathpp13
+  description: pp13
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp13.hdt
+-
+  name: property-pathpp14
+  description: pp14
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp14.hdt
+-
+  name: property-pathpp16
+  description: pp16
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp16.hdt
+-
+  name: property-pathpp37
+  description: pp37
+  backend: hdt-file
+  file: /opt/data/w3c/property-path/pp37.hdt
+-
+  name: servicedata01endpoint
+  description: data01endpoint
+  backend: hdt-file
+  file: /opt/data/w3c/service/data01endpoint.hdt
+-
+  name: servicedata01
+  description: data01
+  backend: hdt-file
+  file: /opt/data/w3c/service/data01.hdt
+-
+  name: servicedata02endpoint1
+  description: data02endpoint1
+  backend: hdt-file
+  file: /opt/data/w3c/service/data02endpoint1.hdt
+-
+  name: servicedata02endpoint2
+  description: data02endpoint2
+  backend: hdt-file
+  file: /opt/data/w3c/service/data02endpoint2.hdt
+-
+  name: servicedata03endpoint1
+  description: data03endpoint1
+  backend: hdt-file
+  file: /opt/data/w3c/service/data03endpoint1.hdt
+-
+  name: servicedata03endpoint2
+  description: data03endpoint2
+  backend: hdt-file
+  file: /opt/data/w3c/service/data03endpoint2.hdt
+-
+  name: servicedata04endpoint
+  description: data04endpoint
+  backend: hdt-file
+  file: /opt/data/w3c/service/data04endpoint.hdt
+-
+  name: servicedata04
+  description: data04
+  backend: hdt-file
+  file: /opt/data/w3c/service/data04.hdt
+-
+  name: servicedata05endpoint1
+  description: data05endpoint1
+  backend: hdt-file
+  file: /opt/data/w3c/service/data05endpoint1.hdt
+-
+  name: servicedata05endpoint2
+  description: data05endpoint2
+  backend: hdt-file
+  file: /opt/data/w3c/service/data05endpoint2.hdt
+-
+  name: servicedata05
+  description: data05
+  backend: hdt-file
+  file: /opt/data/w3c/service/data05.hdt
+-
+  name: servicedata06endpoint1
+  description: data06endpoint1
+  backend: hdt-file
+  file: /opt/data/w3c/service/data06endpoint1.hdt
+-
+  name: servicedata07
+  description: data07
+  backend: hdt-file
+  file: /opt/data/w3c/service/data07.hdt
+-
+  name: servicedataendpoint01
+  description: dataendpoint01
+  backend: hdt-file
+  file: /opt/data/w3c/service/dataendpoint01.hdt
+-
+  name: subquerysq11
+  description: sq11
+  backend: hdt-file
+  file: /opt/data/w3c/subquery/sq11.hdt
+-
+  name: subquerysq12
+  description: sq12
+  backend: hdt-file
+  file: /opt/data/w3c/subquery/sq12.hdt
+-
+  name: subquerysq12_out
+  description: sq12_out
+  backend: hdt-file
+  file: /opt/data/w3c/subquery/sq12_out.hdt
+-
+  name: subquerysq13
+  description: sq13
+  backend: hdt-file
+  file: /opt/data/w3c/subquery/sq13.hdt
+-
+  name: subquerysq14
+  description: sq14
+  backend: hdt-file
+  file: /opt/data/w3c/subquery/sq14.hdt
+-
+  name: subquerysq14-out
+  description: sq14-out
+  backend: hdt-file
+  file: /opt/data/w3c/subquery/sq14-out.hdt
+-
+  name: update-silentspo
+  description: spo
+  backend: hdt-file
+  file: /opt/data/w3c/update-silent/spo.hdt

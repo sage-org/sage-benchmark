@@ -107,6 +107,7 @@ for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
                     # set the destination to store query results
                     # generate, format and compare
                     # log accordingly
+
                     if [[ $jenapath ]]; then
                       DEST=results/jena/$DIR
                       mkdir -p $DEST/
@@ -184,7 +185,7 @@ for MANIFEST in query-expect/w3c/$FOLDER/manifest.ttl; do
 
                       `node $sagejspath -t xml http://localhost:8000/sparql/$DIR$ADATA -q "$QUERY" 1> $DEST/res.$NAME.xml`
 
-                      results=$DEST/res.$NAME.xml
+                      results="$DEST/res.$NAME.xml"
                       hashxml "$results" "tempRes"
 
                       # soundness
